@@ -134,6 +134,7 @@ class MouseDisplay(cocos.layer.Layer):
         (x, y) are the physical coordinates of the mouse
         (dx, dy) is the distance vector covered by the mouse pointer since the last call.
         """
+        print(x,y)
         self.update_text(x, y)
 
     def on_mouse_drag(self, x, y, dx, dy, buttons, modifiers):
@@ -173,7 +174,7 @@ if __name__ == '__main__':
     args = args_check(parser.parse_args())
 
     # Initializes the director (whatever this does)
-    cocos.director.director.init(resizable=True)
+    cocos.director.director.init(width=1280, height=720, caption='Cocos Tutorial', resizable=True)
 
     # Instantiates our layer and creates a scene that contains our layer as a child
     if args.tuto == 'helloworld':
